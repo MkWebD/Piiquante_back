@@ -11,11 +11,6 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const dotenv = require("dotenv").config('./.env');
 
-// Connection to database MongoDB
-connectDB().then(() => {
-  const server = require('./server')
-  })
-
 // Routes used
 const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
@@ -73,3 +68,8 @@ app.use("/api/sauces", sauceRoutes);
 
 // Exporting app
 module.exports = app;
+
+// Connection to database MongoDB
+connectDB().then(() => {
+  const server = require('./server')
+  })
