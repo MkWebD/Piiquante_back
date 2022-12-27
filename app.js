@@ -6,7 +6,7 @@ const connectDB = require("./db/db")
 
 // Security features
 const mongoSanitize = require("express-mongo-sanitize");
-const toobusy = require("toobusy-js");
+// const toobusy = require("toobusy-js");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const dotenv = require("dotenv").config('./.env');
@@ -40,14 +40,14 @@ app.use(helmet({
   crossOriginResourcePolicy: false,
 }));
 
-// Block request when server is too busy
-app.use(function(req,res,next) {
-  if(toobusy()) {
-    res.status(503).json({ message: "I'm busy right now, sorry."});
-  } else {
-    next();
-  }
-});
+// // Block request when server is too busy
+// app.use(function(req,res,next) {
+//   if(toobusy()) {
+//     res.status(503).json({ message: "I'm busy right now, sorry."});
+//   } else {
+//     next();
+//   }
+// });
 
 // Limit requests for a period of time
 const limiter = rateLimit({
@@ -68,8 +68,3 @@ app.use("/api/sauces", sauceRoutes);
 
 // Exporting app
 module.exports = app;
-
-// Connection to database MongoDB
-connectDB().then(() => {
-  const server = require('./server')
-  })
