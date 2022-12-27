@@ -33,9 +33,5 @@
     "password-validator": "^5.3.0",
     "toobusy-js": "^0.5.1",
     "validator": "^13.7.0"
-  },
-  "devDependencies": {
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
   }
 }

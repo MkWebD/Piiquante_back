@@ -11,9 +11,6 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const dotenv = require("dotenv").config('./.env');
 
-// Log features
-const morgan = require("morgan");
-
 // Connection to database MongoDB
 connectDB().then(() => {
   const server = require('./server')
@@ -25,9 +22,6 @@ const sauceRoutes = require("./routes/sauce");
 
 // Creating Express application
 const app = express();
-
-// Creating log for errors
-app.use(morgan("dev"));
 
 // Setting CORS headers
 app.use((req, res, next) => {
