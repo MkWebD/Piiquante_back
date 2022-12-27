@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const multer = require("multer");
+const connectDB = require("./db/db")
 
 // Security features
 const mongoSanitize = require("express-mongo-sanitize");
@@ -14,7 +15,9 @@ const dotenv = require("dotenv").config('./.env');
 const morgan = require("morgan");
 
 // Connection to database MongoDB
-const mongoose = require("./db/db");
+connectDB().then(() => {
+  const server = require('./server')
+  })
 
 // Routes used
 const userRoutes = require("./routes/user");
