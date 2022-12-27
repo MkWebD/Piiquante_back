@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const cryptojs = require("crypto-js");
 
 // Model used
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // Method for loging in with authentification confirmed via token
 exports.logIn = async (req, res) => {

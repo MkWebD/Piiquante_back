@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const cryptojs = require("crypto-js");
 
 // Model used
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 // Method for signing up with password hashing with bcrypt
 exports.signUp = async (req, res) => {
@@ -28,5 +28,3 @@ exports.signUp = async (req, res) => {
     res.status(500).json({error: err})
   }
 }
-
-

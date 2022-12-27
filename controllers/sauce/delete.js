@@ -1,5 +1,5 @@
 // Model used
-const Sauce = require("../../models/Sauce");
+const Sauce = require("../../models/sauce");
 
 // External requires
 const fs = require("fs");

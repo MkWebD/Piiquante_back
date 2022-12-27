@@ -1,5 +1,5 @@
 // Model used
-const Sauce = require("../../models/Sauce");
+const Sauce = require("../../models/sauce");
 
 // Method for getting all the sauces
 exports.readSauces = async (req, res) => {

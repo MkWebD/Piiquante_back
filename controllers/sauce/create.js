@@ -1,5 +1,5 @@
 // Model used
-const Sauce = require("../../models/Sauce");
+const Sauce = require("../../models/sauce");
 
 // Method for creating a new sauce
 exports.createSauce = async (req, res) => {
