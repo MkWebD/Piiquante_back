@@ -37,7 +37,7 @@ app.use(express.json({limit: "1mb"}));
 
 // Using helmet to secure headers
 app.use(helmet({
-  crossOriginResourcePolicy: false,
+  crossOriginResourcePolicy: true,
 }));
 
 // // Block request when server is too busy
@@ -68,3 +68,8 @@ app.use("/api/sauces", sauceRoutes);
 
 // Exporting app
 module.exports = app;
+
+// Connection to database MongoDB
+connectDB().then(() => {
+  const server = require('./server')
+  })
